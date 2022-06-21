@@ -54,4 +54,4 @@ def solution(begin, target, words):
 
     return answer
 
-# print(f'{solution("hit", "cog", ["hot", "dot", "dog", "lot", "log", "cog"])}')
+print(f'{solution("hit", "cog", ["hot", "dot", "dog", "lot", "log", "cog"])}')

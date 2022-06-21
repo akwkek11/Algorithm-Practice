@@ -28,7 +28,7 @@ for _ in range(T):
         for j in want:
             for k in range(index_room[i][0], index_room[i][1] + 1):
                 work_map[j].append(k)
-    print(work_map)
+                
     for i in range(1, n + 1):
         visit = [0 for _ in range(n + 1)]
         Bipartite_matching(i)

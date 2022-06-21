@@ -7,6 +7,7 @@ import math
 import random
 import re
 import sys
+from typing import Tuple
 
 '''
     주의해줄 것
@@ -471,7 +472,7 @@ def dijkstra(graph: defaultdict, start: str) -> defaultdict:
     return distances
     
 # Dijsktra with tracing the previous route of target
-def dijkstra(graph: defaultdict, start: str, final: str) -> (defaultdict, list):
+def dijkstra(graph: defaultdict, start: str, final: str) -> Tuple[defaultdict, list]:
     distances: defaultdict = defaultdict(lambda: float('inf'))
     parents: defaultdict = defaultdict(lambda: float('inf')) 
     for node in graph:
@@ -743,4 +744,3 @@ def prime_list(m: int, n: int, mode: int) -> list:
     elif mode == 1:
         if m == 1 : m = 2
         return [i for i in range(m, n + 1) if sieve[i] == True]
-

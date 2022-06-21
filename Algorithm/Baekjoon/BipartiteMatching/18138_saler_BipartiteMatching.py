@@ -30,4 +30,5 @@ for i in range(1, n + 1):
     visit = [0 for _ in range(n + 1)]
     Bipartite_matching(i)
 
+print(d)
 print(len(d) - d.count(0))

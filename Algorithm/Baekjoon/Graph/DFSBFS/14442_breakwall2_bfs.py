@@ -30,7 +30,6 @@ while bfs_queue:
     target_x, target_y, block = bfs_queue.popleft()
     if target_x == N - 1 and target_y == M - 1:
         result = cost[target_x][target_y][block]
-        bfs_queue.clear()
         break
     bfs(target_x, target_y, block)
 

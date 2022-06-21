@@ -44,16 +44,27 @@ def kruskal(graph: dict) -> list:
 	    
     return minimum_spanning_tree
 
-V, E= map(int, sys.stdin.readline().strip().split())
+V, E, step = map(int, sys.stdin.readline().strip().split())
 for i in range(1, V + 1):
     graph['vertices'].append(i)
 
+cost: int = 1
 for _ in range(E):
-    start, end, cost = map(int, sys.stdin.readline().strip().split())
+    start, end = map(int, sys.stdin.readline().strip().split())
     graph['edges'].append((start, end, cost))
+    cost += 1
 
-total: int = 0
-for start, end, cost in kruskal(graph):
-    total += cost
+cannot_create: bool = False
+while step:
+    total: int = 0
+    if not cannot_create:
+        result_list = kruskal(graph)
+        if len(result_list) != V - 1:
+            cannot_create = True
+        else:
+            for start, end, cost in result_list:
+                total += cost
+            graph['edges'].remove(result_list[0])
 
-print(f'{total}')
+    print(f'{total}', end=' ')
+    step -= 1
